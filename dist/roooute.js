@@ -8,13 +8,13 @@
     'use strict';
 
     angular.module('roooute')
-        .service('rooouteBuilder', uriBuilder);
+        .service('rooouteBuilder', RooouteBuilder);
 
-    function uriBuilder() {
+    function RooouteBuilder() {
         this.routes = {};
     }
 
-    uriBuilder.prototype.buildRoute = function (route, model) {
+    RooouteBuilder.prototype.buildRoute = function (route, model) {
         var replaceComponent = function () {
             if (!model.hasOwnProperty(arguments[1]))
                 throw "Could not find replacement for route componenet ':" + arguments[1] + "'";
