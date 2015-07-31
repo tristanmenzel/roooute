@@ -8,6 +8,10 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "package.json",
+    ".jshintrc",
+    ".gitignore",
+    "gulpfile.js",
     "node_modules",
     "bower_components",
     "web",
