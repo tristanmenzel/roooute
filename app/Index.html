@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dialogue Demo</title>
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body>
+<div ng-app="app" ng-controller="DemoCtrl as vm">
+
+
+</div>
+<!-- inject:js -->
+<!-- endinject -->
+<script>
+    var mod = angular.module('app', ['roooute']);
+    mod.config(function ($httpProvider) {
+        $httpProvider.interceptors.push('rooouteInterceptor');
+    });
+    mod.controller('DemoCtrl', function ($http) {
+        var vm = this;
+
+        activate();
+
+        function activate() {
+            $http({
+                url: 'http://www.google.com/things/:a/:c',
+                routeParams: {
+                    a: 'b',
+                    c: 123
+                },
+                method: 'GET'
+            })
+        }
+
+    });
+</script>
+</body>
+</html>
