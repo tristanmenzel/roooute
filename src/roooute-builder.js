@@ -14,7 +14,9 @@
                 throw "Could not find replacement for route componenet ':" + arguments[1] + "'";
             return '/' + encodeURIComponent(model[arguments[1]]);
         };
-        return route.replace(/\/:([^\/]+)/g, replaceComponent);
+        if (route && model)
+            return route.replace(/\/:([^\/]+)/g, replaceComponent);
+        return route;
     };
 
 })();
